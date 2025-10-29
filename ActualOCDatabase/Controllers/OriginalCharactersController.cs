@@ -49,7 +49,7 @@ namespace ActualOCDatabase.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,DateOfBirth")] OriginalCharacter originalCharacter)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,NickName,DateOfBirth")] OriginalCharacter originalCharacter)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace ActualOCDatabase.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,DateOfBirth")] OriginalCharacter originalCharacter)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,NickName,DateOfBirth")] OriginalCharacter originalCharacter)
         {
             if (id != originalCharacter.Id)
             {
