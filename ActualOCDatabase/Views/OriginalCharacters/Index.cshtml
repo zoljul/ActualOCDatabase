@@ -13,16 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NickName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateOfBirth)
+                Character
             </th>
             <th></th>
         </tr>
@@ -31,16 +22,14 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-                <td>
+                @if (!string.IsNullOrWhiteSpace(item.NickName))
+                {
                     @Html.DisplayFor(modelItem => item.NickName)
-                </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                }
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
